@@ -1,0 +1,1 @@
+# Restrições de versão do Terraform e providers

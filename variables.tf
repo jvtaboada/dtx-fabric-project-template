@@ -1,0 +1,1 @@
+# Declara variáveis de entrada
