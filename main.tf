@@ -63,6 +63,10 @@ module "fabric_notebook_bronze_to_silver" {
 
   notebook_name = "nb-bronze-to-silver"
   workspace_id = module.fabric_workspace.workspace_id
+
+  depends_on = [module.fabric_workspace]
+
+  #adicionar posteriormente as definitions do notebook
 }
 
 module "fabric_notebook_silver_to_gold" {
@@ -70,4 +74,8 @@ module "fabric_notebook_silver_to_gold" {
 
   notebook_name = "nb-silver-to-gold"
   workspace_id = module.fabric_workspace.workspace_id
+
+  depends_on = [module.fabric_workspace]
+
+  #adicionar posteriormente as definitions do notebook
 }
