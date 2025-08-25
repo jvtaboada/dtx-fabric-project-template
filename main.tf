@@ -28,3 +28,32 @@ module "fabric_workspace" {
 
   depends_on = [module.fabric_capacity]
 }
+
+module "fabric_lakehouse_bronze" {
+  source = "./modules/fabric_lakehouse"
+
+  lakehouse_name = "lh_bronze"
+  workspace_id = module.fabric_workspace.workspace_id
+
+  depends_on = [module.fabric_workspace]
+}
+
+module "fabric_lakehouse_silver" {
+  source = "./modules/fabric_lakehouse"
+
+  lakehouse_name = "lh_silver"
+  workspace_id = module.fabric_workspace.workspace_id
+
+  depends_on = [module.fabric_workspace]
+}
+
+module "fabric_lakehouse_gold" {
+  source = "./modules/fabric_lakehouse"
+
+  lakehouse_name = "lh_gold"
+  workspace_id = module.fabric_workspace.workspace_id
+
+  depends_on = [module.fabric_workspace]
+
+  #adicionar posteriormente o configuration - confirmar enabled schemas
+}
