@@ -57,3 +57,17 @@ module "fabric_lakehouse_gold" {
 
   #adicionar posteriormente o configuration - confirmar enabled schemas
 }
+
+module "fabric_notebook_bronze_to_silver" {
+  source = "./modules/fabric_notebook"
+
+  notebook_name = "nb-bronze-to-silver"
+  workspace_id = module.fabric_workspace.workspace_id
+}
+
+module "fabric_notebook_silver_to_gold" {
+  source = "./modules/fabric_notebook"
+
+  notebook_name = "nb-silver-to-gold"
+  workspace_id = module.fabric_workspace.workspace_id
+}
