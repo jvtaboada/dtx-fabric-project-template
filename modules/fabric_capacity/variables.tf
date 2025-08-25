@@ -1,6 +1,11 @@
-# Variáveis Fabric
-variable "base_name" {
-  description = "Nome base do projeto"
+variable "existing_fabric_capacity_name" {
+  type        = string
+  description = "Nome de uma capacidade Fabric existente. Se vazio, será criada uma nova."
+  default     = ""
+}
+
+variable "capacity_name" {
+  description = "Nome da Capacidade do Fabric"
   type        = string
 }
 
