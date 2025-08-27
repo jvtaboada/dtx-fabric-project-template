@@ -5,7 +5,7 @@ resource "fabric_data_pipeline" "fabpipeline" {
 
   definition = {
     "pipeline-content.json" = {
-      source = "${path.module}/pipeline-content.json"
+      source = "${path.root}/definitions/pipelines/pipeline-main-content.json"
       tokens = {
         "pipeline_name" = var.pipeline_name
         "workspace_id" = var.workspace_id
