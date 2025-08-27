@@ -32,7 +32,7 @@ module "fabric_workspace" {
 module "fabric_lakehouse_bronze" {
   source = "./modules/fabric_lakehouse"
 
-  lakehouse_name = "lh_bronze"
+  lakehouse_name = local.fabric_lh_bronze_name
   workspace_id = module.fabric_workspace.workspace_id
 
   depends_on = [module.fabric_workspace]
@@ -41,7 +41,7 @@ module "fabric_lakehouse_bronze" {
 module "fabric_lakehouse_silver" {
   source = "./modules/fabric_lakehouse"
 
-  lakehouse_name = "lh_silver"
+  lakehouse_name = local.fabric_lh_silver_name
   workspace_id = module.fabric_workspace.workspace_id
 
   depends_on = [module.fabric_workspace]
@@ -50,7 +50,7 @@ module "fabric_lakehouse_silver" {
 module "fabric_lakehouse_gold" {
   source = "./modules/fabric_lakehouse"
 
-  lakehouse_name = "lh_gold"
+  lakehouse_name = local.fabric_lh_gold_name
   workspace_id = module.fabric_workspace.workspace_id
 
   depends_on = [module.fabric_workspace]
@@ -61,7 +61,7 @@ module "fabric_lakehouse_gold" {
 module "fabric_notebook_bronze_to_silver" {
   source = "./modules/fabric_notebook"
 
-  notebook_name = "nb-bronze-to-silver"
+  notebook_name = local.fabric_nb_bronze_to_silver_name
   workspace_id = module.fabric_workspace.workspace_id
 
   depends_on = [module.fabric_workspace]
@@ -72,7 +72,7 @@ module "fabric_notebook_bronze_to_silver" {
 module "fabric_notebook_silver_to_gold" {
   source = "./modules/fabric_notebook"
 
-  notebook_name = "nb-silver-to-gold"
+  notebook_name = local.fabric_nb_silver_to_gold_name
   workspace_id = module.fabric_workspace.workspace_id
 
   depends_on = [module.fabric_workspace]
