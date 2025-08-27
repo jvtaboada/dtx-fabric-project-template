@@ -1,0 +1,47 @@
+{
+    "name": "{{ .pipeline_name }}",
+    
+    "properties": {
+        "activities": [
+            {
+                "name": "Executar tratamento silver",
+                "type": "TridentNotebook",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "workspaceId": "{{ .workspace_id }}",
+                    "notebookId": "{{ .notebook_id_bronze_to_silver }}"
+                }
+            },
+            {
+                "name": "Executar tratamento gold",
+                "type": "TridentNotebook",
+                "dependsOn": [
+                    {
+                        "activity": "Executar tratamento silver",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "workspaceId": "{{ .workspace_id }}",
+                    "notebookId": "{{ .notebook_id_silver_to_gold }}"
+                }
+            }
+        ]
+    }
+}

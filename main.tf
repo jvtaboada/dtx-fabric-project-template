@@ -79,3 +79,15 @@ module "fabric_notebook_silver_to_gold" {
 
   #adicionar posteriormente as definitions do notebook
 }
+
+module "fabric_pipeline" {
+  source = "./modules/fabric_pipeline"
+
+  pipeline_name = local.fabric_main_pipeline_name
+  workspace_id = module.fabric_workspace.workspace_id
+
+  notebook_id_bronze_to_silver = module.fabric_notebook_bronze_to_silver.notebook_id 
+  notebook_id_silver_to_gold = module.fabric_notebook_silver_to_gold.notebook_id
+
+  depends_on = [module.fabric_workspace, module.fabric_notebook_bronze_to_silver, module.fabric_notebook_silver_to_gold]
+}

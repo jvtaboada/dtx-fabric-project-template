@@ -8,4 +8,5 @@ locals {
 
     fabric_capacity_name = "cap${local.base_name_trimmed}${local.environment}"
     fabric_workspace_name = "ws-${local.base_name}-${local.environment}"
+    fabric_main_pipeline_name = "pl-main"
 }
