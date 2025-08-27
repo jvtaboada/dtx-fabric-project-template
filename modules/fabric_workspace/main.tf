@@ -5,4 +5,6 @@ resource "fabric_workspace" "fabworkspace" {
 
 data "fabric_workspace" "created_workspace"{
   display_name = var.workspace_name
+
+  depends_on = [fabric_workspace.fabworkspace]
 }
