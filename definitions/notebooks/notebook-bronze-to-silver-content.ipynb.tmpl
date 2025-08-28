@@ -1,0 +1,66 @@
+{
+    "cells": [
+        {
+            "cell_type": "code",
+            "source": [
+                "# Welcome to your new notebook\n",
+                "# Type here in the cell editor to add code!\n"
+            ],
+            "outputs": [],
+            "execution_count": null,
+            "metadata": {
+                "microsoft": {
+                    "language": "python",
+                    "language_group": "synapse_pyspark"
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "kernel_info": {
+            "name": "synapse_pyspark"
+        },
+        "kernelspec": {
+            "name": "synapse_pyspark",
+            "display_name": "synapse_pyspark"
+        },
+        "language_info": {
+            "name": "python"
+        },
+        "microsoft": {
+            "language": "python",
+            "language_group": "synapse_pyspark",
+            "ms_spell_check": {
+                "ms_spell_check_language": "en"
+            }
+        },
+        "nteract": {
+            "version": "nteract-front-end@1.0.0"
+        },
+        "spark_compute": {
+            "compute_id": "/trident/default",
+            "session_options": {
+                "conf": {
+                    "spark.synapse.nbs.session.timeout": "1200000"
+                }
+            }
+        },
+        "dependencies": {
+            "lakehouse": {
+                "known_lakehouses": [
+                    {
+                        "id": "{{ .lh_bronze_id }}"
+                    },
+                    {
+                        "id": "{{ .lh_silver_id }}"
+                    }
+                ],
+                "default_lakehouse": "{{ .lh_bronze_id }}",
+                "default_lakehouse_name": "{{ .default_lh_name }}",
+                "default_lakehouse_workspace_id": "{{ .workspace_id }}"
+            }
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 5
+}

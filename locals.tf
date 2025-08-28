@@ -12,6 +12,8 @@ locals {
     fabric_lh_silver_name = "lh_silver"
     fabric_lh_gold_name = "lh_gold"
     fabric_nb_bronze_to_silver_name = "nb-bronze-to-silver"
+    nb_bronze_to_silver_definition_path = "${path.root}/definitions/notebooks/notebook-bronze-to-silver-content.ipynb.tmpl"
     fabric_nb_silver_to_gold_name = "nb-silver-to-gold"
+    nb_silver_to_gold_definition_path = "${path.root}/definitions/notebooks/notebook-silver-to-gold-content.ipynb.tmpl"
     fabric_main_pipeline_name = "pl-main"
 }

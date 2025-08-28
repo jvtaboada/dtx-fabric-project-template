@@ -4,3 +4,10 @@ resource "fabric_lakehouse" "fablakehouse" {
 
   #adicionar posteriormente o configuration
 }
+
+data "fabric_lakehouse" "get_lakehouse_id" {
+  display_name = var.lakehouse_name
+  workspace_id = var.workspace_id
+
+  depends_on = [fabric_lakehouse.fablakehouse]
+}

@@ -63,10 +63,16 @@ module "fabric_notebook_bronze_to_silver" {
 
   notebook_name = local.fabric_nb_bronze_to_silver_name
   workspace_id = module.fabric_workspace.workspace_id
+  notebook_definition_path = local.nb_bronze_to_silver_definition_path
+
+  tokens = {
+    "default_lh_name": local.fabric_lh_bronze_name
+    "lh_bronze_id": module.fabric_lakehouse_bronze.lakehouse_id
+    "lh_silver_id": module.fabric_lakehouse_silver.lakehouse_id
+    "workspace_id": module.fabric_workspace.workspace_id
+  }
 
   depends_on = [module.fabric_workspace]
-
-  #adicionar posteriormente as definitions do notebook
 }
 
 module "fabric_notebook_silver_to_gold" {
@@ -74,10 +80,16 @@ module "fabric_notebook_silver_to_gold" {
 
   notebook_name = local.fabric_nb_silver_to_gold_name
   workspace_id = module.fabric_workspace.workspace_id
+  notebook_definition_path = local.nb_silver_to_gold_definition_path
+
+  tokens = {
+    "default_lh_name": local.fabric_lh_silver_name
+    "lh_silver_id": module.fabric_lakehouse_silver.lakehouse_id
+    "lh_gold_id": module.fabric_lakehouse_gold.lakehouse_id
+    "workspace_id": module.fabric_workspace.workspace_id
+  }
 
   depends_on = [module.fabric_workspace]
-
-  #adicionar posteriormente as definitions do notebook
 }
 
 module "fabric_pipeline" {
