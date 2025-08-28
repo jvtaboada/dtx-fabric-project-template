@@ -1,4 +1,15 @@
-# Modelo de Projeto de Dados no Fabric via Terraform 
+<p align="center">
+  <img src="https://www.dataex.com.br/wp-content/uploads/2023/04/DataEX-Logo.svg" alt="Logo DataEX" width="200"/>
+</p>
+
+<h1 align="center">Template Terraform para Projetos de Dados no Microsoft Fabric</h1>
+
+<p align="center">
+  Provisionamento automatizado de ambientes no Microsoft Fabric utilizando <b>Infraestrutura como Código</b> (IaC) com Terraform.
+</p>
+
+---
+ 
 
 ## ⚙️ Pré-requisitos locais
 
