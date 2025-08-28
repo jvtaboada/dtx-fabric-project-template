@@ -8,12 +8,13 @@ variable "workspace_id" {
   type        = string
 }
 
-variable "notebook_id_bronze_to_silver" {
-    description = "Resource ID do notebook nb-bronze-to-silver"
-    type        = string
+variable "pipeline_definition_path" {
+  description = "O caminho para o arquivo de pipeline 'json'"
+  type        = string
 }
 
-variable "notebook_id_silver_to_gold" {
-    description = "Resource ID do notebook nb-silver-to-gold"
-    type        = string
+variable "tokens" {
+  description = "Lista de tokens para ser substituído no arquivo de definitions da pipeline"
+  type        = map(string)
+  default     = {}
 }

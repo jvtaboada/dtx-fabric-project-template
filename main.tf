@@ -97,9 +97,14 @@ module "fabric_pipeline" {
 
   pipeline_name = local.fabric_main_pipeline_name
   workspace_id = module.fabric_workspace.workspace_id
+  pipeline_definition_path = local.main_pipeline_definition_path
 
-  notebook_id_bronze_to_silver = module.fabric_notebook_bronze_to_silver.notebook_id 
-  notebook_id_silver_to_gold = module.fabric_notebook_silver_to_gold.notebook_id
+  tokens = {
+    "pipeline_name" = local.fabric_main_pipeline_name
+    "workspace_id" = module.fabric_workspace.workspace_id
+    "notebook_id_bronze_to_silver" = module.fabric_notebook_bronze_to_silver.notebook_id 
+    "notebook_id_silver_to_gold" = module.fabric_notebook_silver_to_gold.notebook_id
+  }
 
   depends_on = [module.fabric_workspace, module.fabric_notebook_bronze_to_silver, module.fabric_notebook_silver_to_gold]
 }

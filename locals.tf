@@ -16,4 +16,5 @@ locals {
     fabric_nb_silver_to_gold_name = "nb-silver-to-gold"
     nb_silver_to_gold_definition_path = "${path.root}/definitions/notebooks/notebook-silver-to-gold-content.ipynb.tmpl"
     fabric_main_pipeline_name = "pl-main"
+    main_pipeline_definition_path = "${path.root}/definitions/pipelines/pipeline-main-content.json"
 }
