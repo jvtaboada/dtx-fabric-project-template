@@ -1,0 +1,26 @@
+#####################
+# Arquivo de variáveis do projeto Terraform
+# Copie este arquivo para terraform.tfvars e edite conforme seu ambiente
+#####################
+
+# ID da Subscription do Azure
+subscription_id = "00000000-0000-0000-0000-000000000000"
+
+# Nome base do projeto no Fabric - utilizado para nomear recursos
+base_name = "dtx-project"
+
+# Ambiente de implantação: dev, hmg ou prd
+environment = "dev"
+
+# Região do Azure
+location = "eastus"
+
+# Nome de uma capacidade existente no Fabric
+# Deixe vazio para criar uma nova
+existing_fabric_capacity_name = ""
+
+# SKU da capacidade do Fabric
+sku = "F2"
+
+# Lista de administradores da capacidade do Fabric
+admins_email = "usuario1@empresa.com"
