@@ -23,4 +23,5 @@ existing_fabric_capacity_name = ""
 sku = "F2"
 
 # Lista de administradores da capacidade do Fabric
-admins_email = "usuario1@empresa.com"
+## Lista separada por vírgulas. Não adicione espaço depois da vírgula.
+fabric_capacity_admins = "usuario1@empresa.com,usuario2@empresa.com"

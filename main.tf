@@ -15,7 +15,7 @@ module "fabric_capacity" {
   rg_name      = local.rg_name
   location     = var.location
   sku          = var.sku
-  admins_email = var.admins_email
+  admins_email = local.fabric_capacity_admins
 
   depends_on = [module.azure_resource_manager]
 }

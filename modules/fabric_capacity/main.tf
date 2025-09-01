@@ -4,7 +4,7 @@ resource "azurerm_fabric_capacity" "fabcapacity" {
   name                = var.capacity_name
   resource_group_name = var.rg_name
   location            = var.location
-  administration_members = [var.admins_email]
+  administration_members = var.admins_email
   sku {
     name = var.sku
     tier = "Fabric"
@@ -15,6 +15,8 @@ resource "azurerm_fabric_capacity" "fabcapacity" {
 data "fabric_capacity" "created_capacity_id" {
   count        = var.existing_fabric_capacity_name == "" ? 1 : 0
   display_name = azurerm_fabric_capacity.fabcapacity[0].name
+
+  depends_on = [azurerm_fabric_capacity.fabcapacity]
 
   lifecycle {
     postcondition {

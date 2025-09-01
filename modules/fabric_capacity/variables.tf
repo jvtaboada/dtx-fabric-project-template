@@ -26,5 +26,5 @@ variable "sku" {
 
 variable "admins_email" {
   description = "Email dos admins da capacidade Fabric"
-  type        = string
+  type        = set(string)
 }

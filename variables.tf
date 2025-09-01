@@ -32,8 +32,7 @@ variable "sku" {
   type        = string
 }
 
-variable "admins_email" {
-  description = "Email dos admins da capacidade Fabric"
+variable "fabric_capacity_admins" {
+  description = "Lista de email dos admins da capacidade Fabric"
   type        = string
 }
-
