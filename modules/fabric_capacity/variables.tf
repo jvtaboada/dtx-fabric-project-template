@@ -22,6 +22,12 @@ variable "location" {
 variable "sku" {
   description = "SKU da capacidade Fabric"
   type        = string
+  default     = "F2"
+
+  validation {
+    condition     = contains(["F2", "F4", "F8", "F16", "F32", "F64", "F128", "F256", "F512", "F1024", "F2048"], var.sku)
+    error_message = "Valor inválido para SKU da capacidade Fabric. Valores válidos são: ['F2', 'F4', 'F8', 'F16', 'F32', 'F64', 'F128', 'F256', 'F512', 'F1024', 'F2048']."
+  }
 }
 
 variable "admins_email" {
