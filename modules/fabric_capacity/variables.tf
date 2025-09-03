@@ -1,6 +1,11 @@
+variable "create_fabric_capacity" {
+  description = "Flag que indica se é necessário ou não criar uma nova capacacidade Fabric"
+  type        = bool
+}
+
 variable "existing_fabric_capacity_name" {
   type        = string
-  description = "Nome de uma capacidade Fabric existente. Se vazio, será criada uma nova."
+  description = "Nome de uma capacidade Fabric existente - se vazio, será criada uma nova"
   default     = ""
 }
 

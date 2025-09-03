@@ -10,6 +10,7 @@ module "azure_resource_manager" {
 module "fabric_capacity" {
   source = "./modules/fabric_capacity"
   
+  create_fabric_capacity = local.create_fabric_capacity
   existing_fabric_capacity_name = var.existing_fabric_capacity_name
   capacity_name = local.fabric_capacity_name
   rg_name      = local.rg_name

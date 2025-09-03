@@ -16,7 +16,7 @@ environment = "dev"
 location = "eastus"
 
 # Nome de uma capacidade existente no Fabric
-# Deixe vazio para criar uma nova
+## Deixe vazio para criar uma nova capacidade
 existing_fabric_capacity_name = ""
 
 # SKU da capacidade do Fabric

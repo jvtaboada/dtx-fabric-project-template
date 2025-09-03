@@ -23,7 +23,7 @@ variable "location" {
 # Variáveis Fabric
 variable "existing_fabric_capacity_name" {
   type        = string
-  description = "Nome de uma capacidade Fabric existente. Se vazio, será criada uma nova."
+  description = "Nome de uma capacidade Fabric existente - se vazio, será criada uma nova"
   default     = ""
 }
 
