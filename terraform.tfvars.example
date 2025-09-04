@@ -3,6 +3,9 @@
 # Copie este arquivo para terraform.tfvars e edite conforme seu ambiente
 #####################
 
+# ID do Tenant do Azure
+tenant_id = "00000000-0000-0000-0000-000000000000"
+
 # ID da Subscription do Azure
 subscription_id = "00000000-0000-0000-0000-000000000000"
 
@@ -25,3 +28,7 @@ sku = "F2"
 # Lista de administradores da capacidade do Fabric
 ## Lista separada por vírgulas. Não adicione espaço depois da vírgula.
 fabric_capacity_admins = "usuario1@empresa.com,usuario2@empresa.com"
+
+# Nome do grupo de segurança (Entra) que contém os administradores do Workspace do Fabric
+## Deixe vazio para adicionar os administradores manualmente
+fabric_workspace_admins_sg_name=""

@@ -30,6 +30,16 @@ module "fabric_workspace" {
   depends_on = [module.fabric_capacity]
 }
 
+module "fabric_workspace_role_assignment" { 
+  source = "./modules/fabric_workspace_role_assignment"
+
+  count = local.enable_workspace_role_assignment ? 1 : 0
+  workspace_id = module.fabric_workspace.workspace_id
+  principal_id   = data.azuread_group.fabric_workspace_admin[0].object_id
+
+  depends_on = [module.fabric_workspace]
+}
+
 module "fabric_lakehouse_bronze" {
   source = "./modules/fabric_lakehouse"
 

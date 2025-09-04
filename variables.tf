@@ -10,6 +10,11 @@ variable "environment" {
 }
 
 # Variáveis Azure
+variable "tenant_id" {
+  description = "ID do Tenant do Azure"
+  type        = string
+}
+
 variable "subscription_id" {
   description = "ID da Subscription do Azure"
   type        = string
@@ -35,4 +40,10 @@ variable "sku" {
 variable "fabric_capacity_admins" {
   description = "Lista de email dos admins da capacidade Fabric"
   type        = string
+}
+
+variable "fabric_workspace_admins_sg_name" { 
+  description = "Nome do grupo de segurança (Entra) com os administradores do workspace Fabric"
+  type        = string
+  default     = ""
 }
