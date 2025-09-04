@@ -1,5 +1,3 @@
-# Restrições de versão do Terraform e providers
-
 terraform {
   required_version = ">= 1.12.2, < 2.0.0"
 
@@ -10,11 +8,11 @@ terraform {
     }
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 4.0"
+      version = "~> 4.42.0"
     }
     fabric = {
       source  = "microsoft/fabric"
-      version = "~> 1.0"
+      version = "~> 1.5.0"
     }
   }
 }
