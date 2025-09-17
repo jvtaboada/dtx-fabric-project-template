@@ -1,4 +1,3 @@
-# Variáveis projeto
 variable "base_name" {
   description = "Nome base do projeto"
   type        = string
@@ -9,7 +8,6 @@ variable "environment" {
   type        = string
 }
 
-# Variáveis Azure
 variable "tenant_id" {
   description = "ID do Tenant do Azure"
   type        = string
@@ -25,7 +23,6 @@ variable "location" {
   type        = string
 }
 
-# Variáveis Fabric
 variable "existing_fabric_capacity_name" {
   type        = string
   description = "Nome de uma capacidade Fabric existente - se vazio, será criada uma nova"
@@ -48,7 +45,6 @@ variable "fabric_workspace_admins_sg_name" {
   default     = ""
 }
 
-# Variáveis Azure DevOps
 variable "azdevops_organization_name" {
   description = "Nome da organização do Azure DevOps"
   type        = string

@@ -11,7 +11,6 @@ resource "azurerm_fabric_capacity" "fabcapacity" {
   }
 }
 
-# Se criou nova, consulta ela
 data "fabric_capacity" "created_capacity_id" {
   count        = var.create_fabric_capacity ? 1 : 0
   display_name = azurerm_fabric_capacity.fabcapacity[0].name
@@ -26,7 +25,6 @@ data "fabric_capacity" "created_capacity_id" {
   }
 }
 
-# Se já existia, consulta ela
 data "fabric_capacity" "provided_capacity_id" {
   count        = var.create_fabric_capacity ? 0 : 1
   display_name = var.existing_fabric_capacity_name

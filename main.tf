@@ -65,8 +65,6 @@ module "fabric_lakehouse_gold" {
   workspace_id = module.fabric_workspace.workspace_id
 
   depends_on = [module.fabric_workspace]
-
-  #adicionar posteriormente o configuration - confirmar enabled schemas
 }
 
 module "fabric_notebook_bronze_to_silver" {

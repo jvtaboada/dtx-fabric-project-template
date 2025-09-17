@@ -1,4 +1,3 @@
-# Variáveis Azure
 variable "rg_name" {
   description = "Nome do resource group"
   type        = string

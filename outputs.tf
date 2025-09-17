@@ -1,1 +1,0 @@
-# Exporta informações úteis (URL, IDs, etc.)
