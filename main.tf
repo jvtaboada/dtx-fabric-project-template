@@ -119,3 +119,18 @@ module "fabric_pipeline" {
 
   depends_on = [module.fabric_workspace, module.fabric_notebook_bronze_to_silver, module.fabric_notebook_silver_to_gold]
 }
+
+# Integração Git está em PREVIEW - podem ter alterações futuras
+module "fabric_azdevops_integration" {
+  source = "./modules/fabric_workspace_git"
+
+  count = local.create_ws_git_integration ? 1 : 0
+  workspace_id = module.fabric_workspace.workspace_id
+  organization_name = var.azdevops_organization_name
+  project_name = var.azdevops_project_name
+  repository_name = var.azdevops_repository_name
+  branch_name = var.azdevops_branch_name
+  directory_name = var.azdevops_directory_name
+
+  depends_on = [module.fabric_workspace]
+}

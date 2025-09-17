@@ -32,3 +32,22 @@ fabric_capacity_admins = "usuario1@empresa.com,usuario2@empresa.com"
 # Nome do grupo de segurança (Entra) que contém os administradores do Workspace do Fabric
 ## Deixe vazio para adicionar os administradores manualmente
 fabric_workspace_admins_sg_name=""
+
+# Integração Git com Azure DevOps (PREVIEW: podem haver bugs ou alterações na funcionalidade)
+## Deixe todas as variáveis abaixo vazias para NÃO configurar a integração
+
+# Nome da organização no Azure DevOps
+azdevops_organization_name = ""
+
+# Nome do projeto no Azure DevOps
+azdevops_project_name = ""
+
+# Nome do repositório dentro do projeto do Azure DevOps
+azdevops_repository_name = ""
+
+# Nome do branch no repositório onde serão versionados os itens
+azdevops_branch_name = ""
+
+# Diretório dentro do repositório do Azure DevOps onde os itens do Fabric serão versionados
+## O diretório deve começar com "/" (Ex: "/example_folder")
+azdevops_directory_name = ""

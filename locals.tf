@@ -22,4 +22,12 @@ locals {
     nb_silver_to_gold_definition_path = "${path.root}/definitions/notebooks/notebook-silver-to-gold-content.ipynb.tmpl"
     fabric_main_pipeline_name = "pl-main"
     main_pipeline_definition_path = "${path.root}/definitions/pipelines/pipeline-main-content.json"
+
+    create_ws_git_integration = (
+        trimspace(var.azdevops_organization_name) != "" &&
+        trimspace(var.azdevops_project_name)      != "" &&
+        trimspace(var.azdevops_repository_name)   != "" &&
+        trimspace(var.azdevops_branch_name)       != "" &&
+        trimspace(var.azdevops_directory_name)    != ""
+        )
 }

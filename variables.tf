@@ -47,3 +47,34 @@ variable "fabric_workspace_admins_sg_name" {
   type        = string
   default     = ""
 }
+
+# Variáveis Azure DevOps
+variable "azdevops_organization_name" {
+  description = "Nome da organização do Azure DevOps"
+  type        = string
+  default     = ""
+}
+
+variable "azdevops_project_name" {
+  description = "Nome do projeto dentro da organização do Azure DevOps"
+  type        = string
+  default     = ""
+}
+
+variable "azdevops_repository_name" {
+  description = "Nome do repositório Git no projeto"
+  type        = string
+  default     = ""
+}
+
+variable "azdevops_branch_name" {
+  description = "Nome da branch do repositório que será utilizada"
+  type        = string
+  default     = ""
+}
+
+variable "azdevops_directory_name" {
+  description = "Nome do diretório dentro do repositório do Azure DevOps onde os itens do Fabric serão versionados"
+  type        = string
+  default     = ""
+}

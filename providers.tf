@@ -11,5 +11,5 @@ provider "azurerm" {
 }
 
 provider "fabric" {
-
+   preview = true
 }
