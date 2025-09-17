@@ -1,17 +1,17 @@
 # Convenções de nomes, tags, prefixos
 locals {
     base_name = var.base_name
-    base_name_trimmed     = replace(replace(local.base_name, "-", ""), "_", "")
+    base_name_trimmed = replace(replace(local.base_name, "-", ""), "_", "")
     environment = var.environment
 
     rg_name = "rg-${local.base_name}-${local.environment}"
 
-    create_fabric_capacity = var.existing_fabric_capacity_name == ""
+    create_fabric_capacity = trimspace(var.existing_fabric_capacity_name) == ""
     fabric_capacity_name = local.create_fabric_capacity ? "cap${local.base_name_trimmed}${local.environment}" : var.existing_fabric_capacity_name
     fabric_capacity_admins = split(",", var.fabric_capacity_admins)
     
     fabric_workspace_name = "ws-${local.base_name}-${local.environment}"
-    enable_workspace_role_assignment = var.fabric_workspace_admins_sg_name != ""
+    enable_workspace_role_assignment = trimspace(var.fabric_workspace_admins_sg_name) != ""
     
     fabric_lh_bronze_name = "lh_bronze"
     fabric_lh_silver_name = "lh_silver"
